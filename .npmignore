@@ -40,3 +40,6 @@ Thumbs.db
 
 # npm
 .github
+.eslintrc.js
+.prettierrc.json
+scripts/*

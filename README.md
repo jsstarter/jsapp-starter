@@ -15,7 +15,7 @@ Node.js project generator for React Full stack Application.
 - For full features refer to [cra-express-ts-starter](https://github.com/vkkotha/cra-express-ts-starter)
 
 ## Usage
-- Install npm packages.
+- Create React/Express fullstack starter app.
 ```shell script
 $ npx jsapp-starter create-app <my-app>
 ```

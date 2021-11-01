@@ -1,16 +1,16 @@
 {
   "name": "jsapp-starter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Javascript React/Express Fullstack App generator.",
   "main": "index.js",
   "scripts": {
     "jsstarter": "bin/jsstarter.js",
-    "lint": "eslint './**/*.{ts,js}'",
+    "lint": "eslint .",
     "gpr-setup": "node scripts/gpr-setup.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jsstarter/jsapp-starter.git"
+    "url": "https://github.com/jsstarter/jsapp-starter.git"
   },
   "keywords": [
     "Javascript",
