@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
+      - run: npm run lint
 
   publish-npm:
     needs: build
@@ -43,6 +44,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
+          scope: '@jsstarter'
       - run: npm ci
       - run: npm publish
         env:

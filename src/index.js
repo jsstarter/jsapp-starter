@@ -1,6 +1,6 @@
-'use strict';
-
+const process = require('process');
 const { Command } = require('commander');
+
 const packageJson = require('../package.json');
 const createAppCommand = require('./create-app');
 
@@ -13,5 +13,5 @@ function start() {
 }
 
 module.exports = {
-  start: start,
+  start,
 };

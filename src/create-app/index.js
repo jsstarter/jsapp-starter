@@ -1,4 +1,3 @@
-'use strict';
 const process = require('process');
 const path = require('path');
 const fs = require('fs');
@@ -15,8 +14,6 @@ if (!shell.which('git')) {
   logger.error('git is not installed, please check and install git.');
   process.exit(1);
 }
-const gitAuthor = getGitAuthor();
-
 function getGitAuthor() {
   let gitUserName = '';
   try {
@@ -28,26 +25,7 @@ function getGitAuthor() {
   return gitUserName;
 }
 
-function processCommand(projectDir, options) {
-  const type = options.type;
-  const appDir = checkAndCreateAppDir(projectDir);
-
-  cloneRepository(projectDir);
-  cleanupFiles(appDir);
-
-  fixPackageJson(projectDir, appDir);
-  fixPackageJson(projectDir, appDir, 'client');
-  fixPackageJson(projectDir, appDir, 'server');
-
-  setSubProjectAsMain(projectDir, appDir, options);
-  generateReadme(projectDir, appDir, options);
-
-  if (!options.skipNpmInstall) {
-    installNpmPackages(appDir);
-  }
-
-  logger.log('Finished Creating App.', 'You can now start by running npm install --workspace=client');
-}
+const gitAuthor = getGitAuthor();
 
 function checkAndCreateAppDir(projectDir) {
   const curDir = process.cwd();
@@ -58,7 +36,7 @@ function checkAndCreateAppDir(projectDir) {
     if (err.code === 'EEXIST') {
       logger.error(`Directory ${projectDir} already exists. Please provide another name.`);
     } else {
-      logger.error(error);
+      logger.error(err);
     }
     process.exit(1);
   }
@@ -84,11 +62,7 @@ function cleanupFiles(appDir) {
   shell.rm('-f', 'server/package-lock.json');
 }
 
-function fixPackageJson(projectDir, appDir, packageJsonFilePath) {
-  if (!packageJsonFilePath) {
-    packageJsonFilePath = '';
-  }
-
+function fixPackageJson(projectDir, appDir, packageJsonFilePath = '') {
   const packageFilePath = packageJsonFilePath ? `${packageJsonFilePath}/package.json` : 'package.json';
   logger.info(`Updating ${projectDir}/${packageFilePath}`);
   const jsonString = fs.readFileSync(`${appDir}/${packageFilePath}`, 'utf-8');
@@ -114,7 +88,7 @@ function subProjectFolder(options) {
 }
 
 function setSubProjectAsMain(projectDir, appDir, options) {
-  let subProject = subProjectFolder(options);
+  const subProject = subProjectFolder(options);
 
   if (subProject) {
     logger.info(`Setting up ${options.type} as main project.`);
@@ -130,9 +104,9 @@ function setSubProjectAsMain(projectDir, appDir, options) {
 }
 
 function generateReadme(projectDir, appDir, options) {
-  let subProject = subProjectFolder(options);
-  const readmeTemplateFile = path.join(__dirname, `../templates/README.md`);
-  let readmeTemplate = fs.readFileSync(readmeTemplateFile, 'utf-8');
+  const subProject = subProjectFolder(options);
+  const readmeTemplateFile = path.join(__dirname, '../templates/README.md');
+  const readmeTemplate = fs.readFileSync(readmeTemplateFile, 'utf-8');
   const data = { projectDir, subProject };
   const readme = Sqrly.render(readmeTemplate, data);
   fs.writeFileSync(`${appDir}/README.md`, readme);
@@ -145,6 +119,26 @@ function installNpmPackages(appDir) {
     logger.error('npm install failed. Please clean up app folder and retry.');
     process.exit(1);
   }
+}
+
+function processCommand(projectDir, options) {
+  const appDir = checkAndCreateAppDir(projectDir);
+
+  cloneRepository(projectDir);
+  cleanupFiles(appDir);
+
+  fixPackageJson(projectDir, appDir);
+  fixPackageJson(projectDir, appDir, 'client');
+  fixPackageJson(projectDir, appDir, 'server');
+
+  setSubProjectAsMain(projectDir, appDir, options);
+  generateReadme(projectDir, appDir, options);
+
+  if (!options.skipNpmInstall) {
+    installNpmPackages(appDir);
+  }
+
+  logger.log('Finished Creating App.', 'You can now start by running npm install --workspace=client');
 }
 
 const command = new Command('create-app');
