@@ -1,4 +1,4 @@
-# jsstarter
+# jsapp-starter
 ![node](http://img.shields.io/badge/node-16+-brightgreen.svg)
 ![npm](http://img.shields.io/badge/npm-8+-orange.svg)
 
@@ -17,9 +17,9 @@ Node.js project generator for React Full stack Application.
 ## Usage
 - Install npm packages.
 ```shell script
-$ npx jsstarter create-app <my-app>
+$ npx jsapp-starter create-app <my-app>
 ```
-Run `npx jsstarter --help` or `npx jsstarter create-app --help` for additional options.
+Run `npx jsapp-starter --help` or `npx jsapp-starter create-app --help` for additional options.
 
 - Start Server
 ```shell script
@@ -39,4 +39,4 @@ $ npm start --workspace=client
 > NOTE: Refer to Project README for additional information.
 
 ## License
-[MIT License](https://github.com/vkkotha/jsstarter/blob/master/LICENSE).
+[MIT License](https://github.com/jsstarter/jsstarter/blob/master/LICENSE).
