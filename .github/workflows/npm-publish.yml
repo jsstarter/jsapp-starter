@@ -46,6 +46,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@jsstarter'
       - run: npm ci
+      - run: npm run gpr-setup
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
