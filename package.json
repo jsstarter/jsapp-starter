@@ -1,5 +1,5 @@
 {
-  "name": "@jsstater/jsstarter",
+  "name": "jsapp-starter",
   "version": "1.0.0",
   "description": "Javascript React/Express Fullstack App generator.",
   "main": "index.js",
@@ -21,9 +21,9 @@
   "author": "vkkotha",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jsstarter/jsstarter/issues"
+    "url": "https://github.com/jsstarter/jsapp-starter/issues"
   },
-  "homepage": "https://github.com/jsstarter/jsstarter#readme",
+  "homepage": "https://github.com/jsstarter/jsapp-starter#readme",
   "bin": {
     "jsstarter": "bin/jsstarter.js"
   },
