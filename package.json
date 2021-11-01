@@ -1,5 +1,5 @@
 {
-  "name": "jsstarter",
+  "name": "@jsstrter/jsstarter",
   "version": "1.0.0",
   "description": "Javascript React/Express Fullstack App generator.",
   "main": "index.js",
