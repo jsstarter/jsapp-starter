@@ -1,0 +1,37 @@
+{
+  "name": "jsstarter",
+  "version": "1.0.0",
+  "description": "Frontend Javascript App generator.",
+  "main": "index.js",
+  "scripts": {
+    "jsstarter": "bin/jsstarter.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkkotha/jsstarter.git"
+  },
+  "keywords": [
+    "Javascript",
+    "React",
+    "Express",
+    "Typescript",
+    "Generator",
+    "Starter"
+  ],
+  "author": "vkkotha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vkkotha/jsstarter/issues"
+  },
+  "homepage": "https://github.com/vkkotha/jsstarter#readme",
+  "bin": {
+    "jsstarter": "bin/jsstarter.js"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^8.3.0",
+    "prettier": "^2.4.1",
+    "shelljs": "^0.8.4",
+    "squirrelly": "^8.0.8"
+  }
+}

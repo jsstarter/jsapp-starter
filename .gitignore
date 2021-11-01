@@ -1,0 +1,38 @@
+# build
+.cache/
+coverage/
+dist/
+build/
+node_modules/
+
+# logs
+logs/
+*.log
+npm-*.log*
+yarn-*.log*
+
+# Intellij
+.idea/
+*.iml
+
+# Vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# misc
+.env.local
+.env.*.local
