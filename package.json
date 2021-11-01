@@ -21,9 +21,9 @@
   "author": "vkkotha",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vkkotha/jsstarter/issues"
+    "url": "https://github.com/jsstarter/jsstarter/issues"
   },
-  "homepage": "https://github.com/vkkotha/jsstarter#readme",
+  "homepage": "https://github.com/jsstarter/jsstarter#readme",
   "bin": {
     "jsstarter": "bin/jsstarter.js"
   },
