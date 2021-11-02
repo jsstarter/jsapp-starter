@@ -1,10 +1,10 @@
 {
   "name": "jsapp-starter",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Javascript React/Express Fullstack App generator.",
   "main": "index.js",
   "scripts": {
-    "jsstarter": "bin/jsstarter.js",
+    "jsapp-starter": "bin/jsapp-starter.js",
     "lint": "eslint .",
     "gpr-setup": "node scripts/gpr-setup.js"
   },
@@ -27,9 +27,10 @@
   },
   "homepage": "https://github.com/jsstarter/jsapp-starter#readme",
   "bin": {
-    "jsstarter": "bin/jsstarter.js"
+    "jsapp-starter": "bin/jsapp-starter.js"
   },
   "dependencies": {
+    "chalk": "^4.1.2",
     "colors": "^1.4.0",
     "commander": "^8.3.0",
     "shelljs": "^0.8.4",

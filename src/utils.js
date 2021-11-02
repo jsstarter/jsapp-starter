@@ -1,9 +1,11 @@
+const chalk = require('chalk');
+
 function logError(msg) {
-  console.log(`ERROR: ${msg}`.red);
+  console.log(chalk.red(`ERROR: ${msg}`));
 }
 
 function logWarn(msg) {
-  console.log(`WARN: ${msg}`.red);
+  console.log(chalk.warn(`WARN: ${msg}`));
 }
 
 function logInfo(msg) {

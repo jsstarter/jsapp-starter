@@ -14,6 +14,7 @@ if (!shell.which('git')) {
   logger.error('git is not installed, please check and install git.');
   process.exit(1);
 }
+
 function getGitAuthor() {
   let gitUserName = '';
   try {
