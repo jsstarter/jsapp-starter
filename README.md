@@ -1,7 +1,8 @@
 # jsapp-starter
 ![node](http://img.shields.io/badge/node-16+-brightgreen.svg)
 ![npm](http://img.shields.io/badge/npm-8+-orange.svg)
-![build](https://github.com/jsstarter/jsapp-starter/actions/workflows/npm-publish.yml/badge.svg)
+![build](https://github.com/jsstarter/jsapp-starter/actions/workflows/build.yml/badge.svg)
+![publish](https://github.com/jsstarter/jsapp-starter/actions/workflows/publish.yml/badge.svg)
 
 Node.js project generator for React Full stack Application.
 
