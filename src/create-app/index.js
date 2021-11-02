@@ -7,7 +7,7 @@ const Sqrly = require('squirrelly');
 
 const { logger } = require('../utils');
 
-const gitRepo = 'https://github.com/vkkotha/cra-express-ts-starter.git';
+const gitRepo = 'https://github.com/jsstarter/cra-express-ts-starter.git';
 const typeChoices = ['fullstack', 'react', 'express'];
 
 if (!shell.which('git')) {
